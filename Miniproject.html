@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Miniproject.css">
+	<title></title>
+	<script type="text/javascript">
+		function validateForm() {
+			var x = document.forms["myForm"]["fname"].value;
+			if(x== "" || x == null) {
+				alert("Please fill the details");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form class="form" name="myForm" onsubmit="return validateForm()" method="post" required>
+	<div id="container">
+	<div id="heading">
+    <span><u>Details Form</u></span></div>
+	<label for="name">Name :</label>
+	<input type="text" id="name" name="fname" minlength="3" style="width: 220px;"><br>
+	<label for="phone">Mob. No. :</label>
+	<input type="tel" id="phone" name="phone" maxlength="10" pattern="^\d{10}$" style="width: 220px;" required><br>
+	<label for="email">Email ID :</label>
+	<input type="email" id="email" pattern=".+@gmail.com" style="width: 220px;" required><br>
+	<button class="btn" onclick="validateForm()">SUBMIT</button>
+</div>
+</body>
+</html>
